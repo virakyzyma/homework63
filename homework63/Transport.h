@@ -1,12 +1,19 @@
 #pragma once
-
+#include <iostream>
+using namespace std;
 class Transport
 {
 protected:
-    char* name;
-    char* fuel;
+    string name;
+    string fuel;
+    double maxCapacity;
+    double fuelAmount;
 public:
-    void Set(const char* fuel, const char* name);
+    Transport() = default;
+    Transport(string fuel, string name, double maxCapacity, double fuelAmount);
 
-    virtual void Show() const;
+    virtual void Show() const = 0;
+    virtual double fuelConsumption(double distance) = 0;
+    virtual double Refuel() = 0;
+   virtual ~Transport(){}
 };

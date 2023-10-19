@@ -1,10 +1,10 @@
+#include <iostream>
 #include "Transport.h"
 #include "Car.h"
 #include "Ship.h"
 #include "Airplane.h"
 #include "Tram.h"
 #include "Motorcycle.h"
-#include <iostream>
 using namespace std;
 
 int main()
@@ -17,29 +17,28 @@ int main()
     switch (m)
     {
     case 1:
-        ptr = new Car();
-        ptr->Set("Benzine", "Tesla");
+        ptr = new Car("Benzine", "BMW", 40, 100);
+        //ptr->Set("Benzine", "BMW", 50, 5);
+        //ptr->fuelConsumption();
         break;
     case 2:
-        ptr = new Ship();
-        ptr->Set("Diesel", "SHIP");
+        ptr = new Ship("Diesel", "SHIP", 300, 500);
         break;
     case 3:
-        ptr = new Airplane();
-        ptr->Set("Benzine", "AirplaneUA");
+        ptr = new Airplane("Benzine", "AirplaneUA", 2000, 2500);
         break;
     case 4:
-        ptr = new Tram();
-        ptr->Set("Electricity", "Tram 1");
+        ptr = new Tram("Electricity", "Tram 1", 0, 0);
         break;
     case 5:
-        ptr = new Motorcycle();
-        ptr->Set("Benzine", "Motorcycle");
+        ptr = new Motorcycle("Benzine", "Motorcycle", 30, 40);
         break;
     default:
         break;
     }
     ptr->Show();
+    ptr->Refuel();
+    ptr->fuelConsumption(100);
     delete ptr;
 
 

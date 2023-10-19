@@ -2,9 +2,12 @@
 #include "Transport.h"
 class Car : public Transport
 {
-	//string color;
 public:
-	//Car(string a, int b, string color);
-	virtual void Show() const;
-};
+	Car() = default;
 
+	Car(string fuelType, string name, double fuelAmount, double tankVolume);
+
+	double fuelConsumption(double distance);
+	double Refuel();
+	void Show() const;
+};

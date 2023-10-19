@@ -3,6 +3,10 @@
 class Motorcycle :  public Transport
 {
 public:
-	virtual void Show() const;
-};
+	Motorcycle() = default;
+	Motorcycle(string fuelType, string name, double fuelAmount, double tankVolume);
 
+	double fuelConsumption(double distance);
+	double Refuel();
+	void Show() const;
+};
